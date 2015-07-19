@@ -92,11 +92,13 @@ observation (for the combination of subject and activity) and each
 variable represents a different measurement. This section of the
 R-script is fairly self-explanatory - main noteworthy uses of the
 *dplyr* package are as follows:
+
 * Chaining (%>%) to compose functions
 * Using the function *summarise_each*, rather than *summarise*, to
 take the mean of all columns (other than those that are grouped-by)
 without having to explicitly list them all as would have been required
 if we had used *summarise*.  
+
 Finally, since the values now represent averages per group, we update
 the variable names in the data frame **tidy_averages** to accurately
 reflect their new values. This is done by prepending the string "Avg:"
