@@ -104,8 +104,10 @@ FALSE. The output file name has been chosen to be "Tidy Averages.txt".
 could use the following sequence of commands, e.g., to read in the
 file into R and view it as a nicely formatted data frame (assuming you
 store it as the file "Tidy Averages.txt"):   
-    Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE)
-    View(Tidy.Averages)
+```R
+Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE)
+View(Tidy.Averages)
+```
 Note especially the fact that if you use read.table, you should use
 the parameter header = TRUE.
 
