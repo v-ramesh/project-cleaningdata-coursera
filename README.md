@@ -139,8 +139,7 @@ could use the following sequence of commands, e.g., to read in the
 file into R and view it as a nicely formatted data frame (assuming you
 store the output text file as "Tidy Averages.txt"):   
       ```R
-      Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE, 
-      		       		check.names = FALSE)
+      Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE, check.names = FALSE)
       View(Tidy.Averages)
       ```
 Note especially the fact that you should use the parameters header =
