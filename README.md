@@ -135,13 +135,13 @@ appear within double quotes and therefore have used the parameter
 quote = FALSE.
 
 2. Note that the text file may not be so easy to read directly. You
-could use the following sequence of commands, e.g., to read in the
-file into R and view it as a nicely formatted data frame (assuming you
-store the output text file as "Tidy Averages.txt"):   
-      ```R
-      Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE, check.names = FALSE)
-      View(Tidy.Averages)
-      ```
+could use the following sequence of commands to read in the file into
+R and view it as a nicely formatted data frame (assuming you store the
+output text file as "Tidy Averages.txt"):      
+   ```R
+   Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE, check.names = FALSE)
+   View(Tidy.Averages)
+   ```
 Note especially the fact that you should use the parameters header =
 TRUE (to read the first line as column names) and check.names = FALSE
 (to prevent R from changing the column names).
