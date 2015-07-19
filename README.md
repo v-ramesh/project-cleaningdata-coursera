@@ -1,6 +1,6 @@
-## Running the script run\_analysis.R
+## Running the R script
 
-Before running the script run\_analysis.R, please ensure the following:
+Before running the script **run\_analysis.R**, please ensure the following:
 
 1. You have extracted the dataset to a folder called "UCI HAR
 Dataset" (that has files "features.txt" and "activity_labels.txt", and
@@ -13,10 +13,10 @@ should not be inside the UCI HAR Dataset folder, for example).
 setwd()) to the one where both the R script and the UCI HAR Dataset
 folder reside. 
 
-## Understanding the script run\_analysis.R
+## Understanding the R script
 
 A description of the script in the file **run\_analysis.R**, organized
-by the steps in the Course Project description.
+by the steps in the project description.
 
 ### Step 0: Import Data Sets from Files
 
