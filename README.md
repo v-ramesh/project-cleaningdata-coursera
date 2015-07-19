@@ -99,11 +99,12 @@ take the mean of all columns (other than those that are grouped-by)
 without having to explicitly list them all as would have been required
 if we had used *summarise*.  
 
-Finally, since the values now represent averages per group, we update
-the variable names in the data frame **tidy_averages** to accurately
-reflect their new values. This is done by prepending the string "Avg:"
-to all column names except the first two (corresponding to Subject and
-Activity) which are unchanged.
+Finally, since the values are now averages per group, we update the
+variable names in the data frame **tidy_averages** to more accurately
+reflect their values (as befitting a "tidy" data set). This is done by
+prepending the string "Avg:" to all column names other than the first
+two (corresponding to Subject and Activity) which do not need to be
+changed. 
 
 ### Coda: Writing the tidy data set to a text file
 
