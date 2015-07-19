@@ -17,9 +17,36 @@ This is done in two steps:
 feature set (X) for training and test data into the data frames
 raw_train_data and raw_test_data respectively. 
 * Combine the rows from raw_train_data and raw_test_data to create the
-single merged data set that is stored in the data frame *merged_data*.
+single merged data set that is stored in the data frame **merged_data**.
 
 ### Step 2: Extracting Mean and Standard Deviation Measurements
+
+This is done in the following steps, corresponding to each uncommented
+line in the R script:
+* The file features.txt contains the feature names (for the columns
+originally in the "X" files) in its second column. To be able to
+perform string operations (like checking for inclusion of "mean"), we
+read in the file as a dataframe **measurement_names** without the
+strings (in the second column) being converted into factors.
+* We use the names "Subject" and "Activity" for the first two columns
+(corresponding to the "subject" and "y" data respectively) and the
+remaining column names (corresponding to the "X" data) given by the
+second column of **measurement_names**
+* The file features.txt contains a number of duplicated names which
+prevents the *select* function (from *dplyr* package) from being
+used. However, these duplicate names do not include the columns of
+interest (related to mean and standard deviation) and can therefore be
+first safely removed (using the inbuilt R function *duplicated*).
+* We extract the first two columns and the remaining columns related
+to mean and standard deviation. For mean, I have chosen to include the
+mean values (given by names of the form mean()). The instructions are
+ambiguous on this front, and I have also chosen to include mean frequencies
+(given by names of the form meanFreq()). I do not want to include the
+averaged signals used in the angle() variables - these include the
+word Mean with an uppercase "M". The columns of interest related to
+mean are therefore identified as those containing the substring "mean"
+without ignoring case. The standard deviation columsn are those that
+include the substring "std".
 
 ### Step 3: Descriptive Activity Names
 

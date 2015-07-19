@@ -1,3 +1,6 @@
+library(plyr)
+library(dplyr)
+
 # Step 0: Import Data Sets from Files
 
 # Directories where raw data files are stored
@@ -19,3 +22,15 @@ raw_train_data <- cbind(raw_subject_train, raw_y_train, raw_X_train)
 raw_test_data <- cbind(raw_subject_test, raw_y_test, raw_X_test)
 merged_data <- rbind(raw_train_data, raw_test_data)
 
+# Step 2: Extract only the mean and standard deviation measurements
+
+# Use features.txt to give column names to make extraction easier
+measurement_names <- read.table(file.path(data_dir, "features.txt"),
+                                stringsAsFactors = FALSE)
+names(merged_data) <- c("Subject", "Activity", measurement_names[,2])
+
+# Before using select, need to remove duplicated column names
+duplicates_removed_data <- merged_data[!duplicated(names(merged_data))]
+extracted_data <- select(duplicates_removed_data, Subject, Activity,
+                         contains("mean", ignore.case = FALSE),
+                         contains("std"))
