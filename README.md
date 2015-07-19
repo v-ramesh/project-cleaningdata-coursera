@@ -70,5 +70,17 @@ indexing into the vector **activity_names**.
 
 ### Step 4: Adding Descriptive Variable Names
 
+Here, there is a judgement call as to what are suitable variable
+names. Because of what we did in Step 2, the data frame
+**extracted_data** has variable names and these are of the form
+*tBodyAcc-mean()-X*, for example. We could chose to rename this to the
+more verbose possibility *"Mean of the Body Acceleration Signal along
+X-axis"* as the descriptive variable name. However, I felt that more
+succinct names work better as variable names since they appear as
+column headings and the more verbose description should be deferred to
+the code book which has a linear presentation. Therefore, given that
+the variable names I created as part of Step 2 seemed appropriately
+descriptive to me, I did nothing in this step.
+
 ### Step 5: Data Set with Average of each Variable
 

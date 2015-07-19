@@ -39,3 +39,5 @@ extracted_data <- select(duplicates_removed_data, Subject, Activity,
 
 activity_names <- (read.table(file.path(data_dir, "activity_labels.txt")))[, 2]
 extracted_data$Activity <- activity_names[extracted_data$Activity]
+
+# Step 4: Use descriptive variable names
