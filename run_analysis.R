@@ -48,8 +48,11 @@ extracted_data$Activity <- activity_names[extracted_data$Activity]
 tidy_averages <- extracted_data %>%
                     group_by(Subject, Activity) %>%
                     summarise_each(funs(mean))
+names(tidy_averages)[-(1:2)] <- paste("Avg", 
+                                      names(tidy_averages)[-(1:2)],
+                                      sep = ":")
 
 # Coda: Write the tidy data set to a text file
 
 output_file <- "Tidy Averages.txt"
-write.table(tidy_averages, output_file, row.names = FALSE)
+write.table(tidy_averages, output_file, quote = FALSE, row.names = FALSE)

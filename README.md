@@ -86,30 +86,44 @@ descriptive to me, I did nothing in this step.
 
 I have chosen to create the tidy data set in the *wide* form, where
 the all measurements (more precisely, their average values) appear in
-a single row for each subject, activity combination. This section of
-the R-script is fairly self-explanatory; it uses the following
-functions/features from the *dplyr* package:
+a single row for each subject, activity combination. This satisfies
+the tidy data requirements since each row contains a single
+observation (for the combination of subject and activity) and each
+variable represents a different measurement. This section of the
+R-script is fairly self-explanatory - main noteworthy uses of the
+*dplyr* package are as follows:
 * Chaining (%>%) to compose functions
-* summarise_each, rather than summarise, to take the mean of all
-columns (other than those that are grouped-by) without having to
-explicitly list them all as would have had to be done with summarise.
+* Using the function *summarise_each*, rather than *summarise*, to
+take the mean of all columns (other than those that are grouped-by)
+without having to explicitly list them all as would have been required
+if we had used *summarise*.  
+Finally, since the values now represent averages per group, we update
+the variable names in the data frame **tidy_averages** to accurately
+reflect their new values. This is done by prepending the string "Avg:"
+to all column names except the first two (corresponding to Subject and
+Activity) which are unchanged.
 
 ### Coda: Writing the tidy data set to a text file
 
 1. Following the course project instructions, we output the tidy data
 frame to a text file by using write.table with parameter row.name =
-FALSE. The output file name has been chosen to be "Tidy Averages.txt".
+FALSE. The output file name has been chosen to be "Tidy
+Averages.txt". I prefer the look of the text file where strings don't
+appear within double quotes and therefore have used the parameter
+quote = FALSE.
 
 2. Note that the text file may not be so easy to read directly. You
 could use the following sequence of commands, e.g., to read in the
 file into R and view it as a nicely formatted data frame (assuming you
-store it as the file "Tidy Averages.txt"):   
+store my output text file as "Tidy Averages.txt"):   
       ```R
-      Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE)
+      Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE, 
+      		       		check.names = FALSE)
       View(Tidy.Averages)
       ```
-Note especially the fact that if you use read.table, you should use
-the parameter header = TRUE.
+Note especially the fact that you should use the parameters header =
+TRUE (to read the first line as column names) and check.names = FALSE
+(to prevent R from changing the column names).
 
 3. The more verbose and comprehensive descriptions of the variable
 names are in the codebook. The codebook is the file "Codebook.txt" in
