@@ -38,18 +38,20 @@ used. However, these duplicate names do not include the columns of
 interest (related to mean and standard deviation) and can therefore be
 first safely removed (using the inbuilt R function *duplicated*).
 * We extract the first two columns and the remaining columns related
-to mean and standard deviation. For mean, I have chosen to extract the
-mean values (given by names of the form mean()) and mean frequencies
-(given by names of the form meanFreq()). Mean frequencies are means of
-some measurements and I have therefore chosen to extract them although
-the project instructions seem ambiguous on this front. I do not,
-however, want to include the averaged signals used in the angle()
-variables since these are angle (and not mean) measurements. These
-average signals are distinguished by containing the word Mean with an
-uppercase "M". The columns of interest related to mean are therefore
-identified as those containing the substring "mean" without ignoring
-case. The standard deviation columns are those that contain the
-substring "std" (case doesn't matter here).   
+to mean and standard deviation. For mean, the project instructions may
+be ambiguous and the justification for my choice is as follows. I have
+chosen to only extract the mean values of measurements that, based on
+the description in the file "features_info.txt", are given by names of
+the form mean() . I agonized long over this, but I decided not to
+extract mean frequencies (given by names of the form meanFreq())
+because following the description in "features_info.txt", they do not
+directly correspond to means of other measurements in the data, but
+rather a weighted means of components extracted from the signal
+measurements. We can unambigously exclude the averaged signals used in
+the angle() variables since these are angle (and not mean)
+measurements. The columns of interest related to mean are therefore
+identified as those containing the substring "mean()" and similarly
+for standard deviation.  
 
 ### Step 3: Descriptive Activity Names
 

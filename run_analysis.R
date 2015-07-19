@@ -32,8 +32,7 @@ names(merged_data) <- c("Subject", "Activity", measurement_names[,2])
 # Before using select, need to remove duplicated column names
 duplicates_removed_data <- merged_data[!duplicated(names(merged_data))]
 extracted_data <- select(duplicates_removed_data, Subject, Activity,
-                         contains("mean", ignore.case = FALSE),
-                         contains("std"))
+                         contains("mean()"), contains("std()"))
 
 # Step 3: Use descriptive activity names
 
