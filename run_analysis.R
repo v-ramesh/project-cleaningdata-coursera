@@ -41,3 +41,15 @@ activity_names <- (read.table(file.path(data_dir, "activity_labels.txt")))[, 2]
 extracted_data$Activity <- activity_names[extracted_data$Activity]
 
 # Step 4: Use descriptive variable names
+
+# Step 5: Average each variable by subject and activity to create a 
+#         new tidy data set
+
+tidy_averages <- extracted_data %>%
+                    group_by(Subject, Activity) %>%
+                    summarise_each(funs(mean))
+
+# Coda: Write the tidy data set to a text file
+
+output_file <- "Tidy Averages.txt"
+write.table(tidy_averages, output_file, row.names = FALSE)

@@ -82,5 +82,34 @@ the code book which has a linear presentation. Therefore, given that
 the variable names I created as part of Step 2 seemed appropriately
 descriptive to me, I did nothing in this step.
 
-### Step 5: Data Set with Average of each Variable
+### Step 5: Tidy Data Set with Average of each Variable
+
+I have chosen to create the tidy data set in the *wide* form, where
+the all measurements (more precisely, their average values) appear in
+a single row for each subject, activity combination. This section of
+the R-script is fairly self-explanatory; it uses the following
+functions/features from the *dplyr* package:
+* Chaining (%>%) to compose functions
+* summarise_each, rather than summarise, to take the mean of all
+columns (other than those that are grouped-by) without having to
+explicitly list them all as would have had to be done with summarise.
+
+### Coda: Writing the tidy data set to a text file
+
+1. Following the course project instructions, we output the tidy data
+frame to a text file by using write.table with parameter row.name =
+FALSE. The output file name has been chosen to be "Tidy Averages.txt".
+2. Note that the text file may not be so easy to read directly. You
+could use the following sequence of commands, e.g., to read in the
+file into R and view it as a nicely formatted data frame (assuming you
+store it as the file "Tidy Averages.txt"):   
+```R
+Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE)
+View(Tidy.Averages)
+```
+Note especially the fact that if you use read.table, you should use
+the parameter header = TRUE.
+3. The more verbose and comprehensive descriptions of the variable
+names are in the codebook. The codebook is the file "Codebook.txt" in
+this GIT repository. 
 
