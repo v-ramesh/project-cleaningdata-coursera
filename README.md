@@ -17,7 +17,7 @@ This is done in two steps:
 feature set (X) for training and test data into the data frames
 raw_train_data and raw_test_data respectively. 
 * Combine the rows from raw_train_data and raw_test_data to create the
-required merged data, stored into merged_data.
+single merged data set that is stored in the data frame *merged_data*.
 
 ### Step 2: Extracting Mean and Standard Deviation Measurements
 
