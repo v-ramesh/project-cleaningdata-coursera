@@ -38,15 +38,16 @@ used. However, these duplicate names do not include the columns of
 interest (related to mean and standard deviation) and can therefore be
 first safely removed (using the inbuilt R function *duplicated*).
 * We extract the first two columns and the remaining columns related
-to mean and standard deviation. For mean, I have chosen to include the
-mean values (given by names of the form mean()). The instructions are
-ambiguous on this front, and I have also chosen to include mean frequencies
-(given by names of the form meanFreq()). I do not want to include the
-averaged signals used in the angle() variables - these include the
-word Mean with an uppercase "M". The columns of interest related to
-mean are therefore identified as those containing the substring "mean"
-without ignoring case. The standard deviation columsn are those that
-include the substring "std".
+to mean and standard deviation. For mean, I have chosen to extract the
+mean values (given by names of the form mean()) and mean frequencies
+(given by names of the form meanFreq()) - the project instructions
+seemed ambiguous on whether mean frequencies should be included or
+not. I do not, however, want to include the averaged signals used in
+the angle() variables - these include the word Mean with an uppercase
+"M". The columns of interest related to mean are therefore identified
+as those containing the substring "mean" without ignoring case. The
+standard deviation columns are those that include the substring
+"std". 
 
 ### Step 3: Descriptive Activity Names
 
