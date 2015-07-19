@@ -99,16 +99,16 @@ explicitly list them all as would have had to be done with summarise.
 1. Following the course project instructions, we output the tidy data
 frame to a text file by using write.table with parameter row.name =
 FALSE. The output file name has been chosen to be "Tidy Averages.txt".
+
 2. Note that the text file may not be so easy to read directly. You
 could use the following sequence of commands, e.g., to read in the
 file into R and view it as a nicely formatted data frame (assuming you
 store it as the file "Tidy Averages.txt"):   
-```R
-Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE)
-View(Tidy.Averages)
-```
+    Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE)
+    View(Tidy.Averages)
 Note especially the fact that if you use read.table, you should use
 the parameter header = TRUE.
+
 3. The more verbose and comprehensive descriptions of the variable
 names are in the codebook. The codebook is the file "Codebook.txt" in
 this GIT repository. 
