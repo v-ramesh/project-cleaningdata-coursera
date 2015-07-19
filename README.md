@@ -1,5 +1,22 @@
+## Running the script run\_analysis.R
+
+Before running the script run\_analysis.R, please ensure the following:
+
+1. You have extracted the dataset to a folder called "UCI HAR
+Dataset" (that has files "features.txt" and "activity_labels.txt", and
+subfolders "test" and "train").   
+2. The run\_analysis.R file resides at the same level as the folder
+"UCI HAR Dataset", i.e., both the run\_analysis.R file and the folder
+UCI HAR Dataset belong to the same folder (the run\_analysis.R file
+should not be inside the UCI HAR Dataset folder, for example). 
+3. On your R console, you have set the working directory (e.g., using
+setwd()) to the one where both the R script and the UCI HAR Dataset
+folder reside. 
+
+## Understanding the script run\_analysis.R
+
 A description of the script in the file **run\_analysis.R**, organized
-by the 5 steps in the Course Project description.
+by the steps in the Course Project description.
 
 ### Step 0: Import Data Sets from Files
 
@@ -120,7 +137,7 @@ quote = FALSE.
 2. Note that the text file may not be so easy to read directly. You
 could use the following sequence of commands, e.g., to read in the
 file into R and view it as a nicely formatted data frame (assuming you
-store my output text file as "Tidy Averages.txt"):   
+store the output text file as "Tidy Averages.txt"):   
       ```R
       Tidy.Averages <- read.table("Tidy Averages.txt", header = TRUE, 
       		       		check.names = FALSE)
