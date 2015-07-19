@@ -40,16 +40,33 @@ first safely removed (using the inbuilt R function *duplicated*).
 * We extract the first two columns and the remaining columns related
 to mean and standard deviation. For mean, I have chosen to extract the
 mean values (given by names of the form mean()) and mean frequencies
-(given by names of the form meanFreq()) - the project instructions
-seemed ambiguous on whether mean frequencies should be included or
-not. I do not, however, want to include the averaged signals used in
-the angle() variables - these include the word Mean with an uppercase
-"M". The columns of interest related to mean are therefore identified
-as those containing the substring "mean" without ignoring case. The
-standard deviation columns are those that include the substring
-"std". 
+(given by names of the form meanFreq()). Mean frequencies are means of
+some measurements and I have therefore chosen to extract them although
+the project instructions seem ambiguous on this front. I do not,
+however, want to include the averaged signals used in the angle()
+variables since these are angle (and not mean) measurements. These
+average signals are distinguished by containing the word Mean with an
+uppercase "M". The columns of interest related to mean are therefore
+identified as those containing the substring "mean" without ignoring
+case. The standard deviation columns are those that contain the
+substring "std" (case doesn't matter here).   
 
 ### Step 3: Descriptive Activity Names
+
+We will take the descriptive activity names to be those given in the
+file "activity_labels.txt". The two lines in this section of the R
+script can then be understood as follows: 
+* We read in the file "activity_labels.txt" as a data frame and use
+its second column to create the vector **activity_names**. Note that
+it so happens that in the file "activity_labels.txt" the sequence of 
+values in the first column (activity labels) are 1, 2, ... and
+therefore the activity name for any label can be found by simply
+indexing into the vector **activity_names**. In other words, for any
+activity label l (with l ranging from 1 to 6) the corresponding
+activity name can be obtained as **activity_names[l]**. 
+* Based on the argument just given, the Activity column of the data
+frame is mapped to its corresponding descriptive name by simply
+indexing into the vector **activity_names**. 
 
 ### Step 4: Adding Descriptive Variable Names
 

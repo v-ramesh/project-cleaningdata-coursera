@@ -34,3 +34,8 @@ duplicates_removed_data <- merged_data[!duplicated(names(merged_data))]
 extracted_data <- select(duplicates_removed_data, Subject, Activity,
                          contains("mean", ignore.case = FALSE),
                          contains("std"))
+
+# Step 3: Use descriptive activity names
+
+activity_names <- (read.table(file.path(data_dir, "activity_labels.txt")))[, 2]
+extracted_data$Activity <- activity_names[extracted_data$Activity]
