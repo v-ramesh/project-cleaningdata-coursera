@@ -17,8 +17,8 @@ folder reside.
 
 The script **run\_analysis.R** is expected to be read/followed along
 with this description. This description is organized by the steps in
-the project description --- comment lines in **run\_analysis.R**
-demarcate the corresponding sections.
+the project description - comment lines demarcate the corresponding
+sections in **run\_analysis.R**. 
 
 ### Step 0: Import Data Sets from Files
 
