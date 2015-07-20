@@ -1,4 +1,3 @@
-library(plyr)
 library(dplyr)
 
 # Step 0: Import Data Sets from Files
