@@ -6,26 +6,28 @@ Before running the script **run\_analysis.R**, please ensure the following:
 Dataset" (that has files "features.txt" and "activity_labels.txt", and
 subfolders "test" and "train").   
 2. The run\_analysis.R file resides at the same level as the folder
-"UCI HAR Dataset", i.e., both the run\_analysis.R file and the folder
+"UCI HAR Dataset", *i.e.*, both the run\_analysis.R file and the folder
 UCI HAR Dataset belong to the same folder (the run\_analysis.R file
 should not be inside the UCI HAR Dataset folder, for example). 
-3. On your R console, you have set the working directory (e.g., using
+3. On your R console, you have set the working directory (*e.g.*, using
 setwd()) to the one where both the R script and the UCI HAR Dataset
 folder reside. 
 
 ## Understanding the R script
 
 A description of the script in the file **run\_analysis.R**, organized
-by the steps in the project description.
+by the steps in the project description. Comment lines in the script
+file demarcate corresponding sections and are expected to be followed
+along with this description.
 
 ### Step 0: Import Data Sets from Files
 
-Before we can start with any of the steps, we need to first import the
-raw data in the training and test files into R objects. The project
-data was extracted to a folder called "UCI HAR Dataset" that resides
-in the same folder as the R script. The path names to the training and
-test files are then constructed in a platform-independent way by using 
-the *file.path* function.
+Before we can start with any of the steps, we need to import the raw
+data in the training and test files into R objects. The project data
+was extracted to a folder called "UCI HAR Dataset" that resides in the
+same folder as the R script. The path names to the training and test
+files are constructed in a platform-independent way by using the
+*file.path* function. 
 
 ### Step 1: Merging the Training and Test Data
 
@@ -47,13 +49,14 @@ read in the file as a dataframe **measurement_names** without the
 strings (in the second column) being converted into factors.
 * We use the names "Subject" and "Activity" for the first two columns
 (corresponding to the "subject" and "y" data respectively) and the
-remaining column names (corresponding to the "X" data) given by the
-second column of **measurement_names**
-* The file features.txt contains a number of duplicated names which
-prevents the *select* function (from *dplyr* package) from being
-used. However, these duplicate names do not include the columns of
-interest (related to mean and standard deviation) and can therefore be
-first safely removed (using the inbuilt R function *duplicated*).
+remaining column names (corresponding to the "X" data) are obtained
+from the second column of **measurement_names**
+* The column names obtained from the file features.txt contain a
+number of duplicated entries which prevents the **select** function from
+working properly. However, these duplicate names do not include the
+columns of interest (related to mean and standard deviation) and can
+therefore be first safely removed (using the inbuilt R function
+*duplicated*).   
 * We extract the first two columns and the remaining columns related
 to mean and standard deviation. For mean, the project instructions may
 be ambiguous and the justification for my choice is as follows. I have
@@ -74,7 +77,7 @@ for standard deviation.
 
 We will take the descriptive activity names to be those given in the
 file "activity_labels.txt". The two lines in this section of the R
-script can then be understood as follows: 
+script can be understood as follows: 
 * We read in the file "activity_labels.txt" as a data frame and use
 its second column to create the vector **activity_names**. Note that
 it so happens that in the file "activity_labels.txt" the sequence of 
@@ -104,7 +107,7 @@ descriptive to me, I did nothing in this step.
 ### Step 5: Tidy Data Set with Average of each Variable
 
 I have chosen to create the tidy data set in the *wide* form, where
-the all measurements (more precisely, their average values) appear in
+all the measurements (more precisely, their average values) appear in 
 a single row for each subject, activity combination. This satisfies
 the tidy data requirements since each row contains a single
 observation (for the combination of subject and activity) and each
