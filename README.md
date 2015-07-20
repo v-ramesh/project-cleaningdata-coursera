@@ -15,10 +15,10 @@ folder reside.
 
 ## Understanding the R script
 
-A description of the script in the file **run\_analysis.R**, organized
-by the steps in the project description. Comment lines in the script
-file demarcate corresponding sections and are expected to be followed
-along with this description.
+The script **run\_analysis.R** is expected to be read/followed along
+with this description. This description is organized by the steps in
+the project description --- comment lines in **run\_analysis.R**
+demarcate the corresponding sections.
 
 ### Step 0: Import Data Sets from Files
 
